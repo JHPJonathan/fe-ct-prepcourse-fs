@@ -6,6 +6,27 @@ class Persona {
    // Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio".
    // Debe tener un método llamado "detalle" que nos devuelva un objeto con las propiedades de la persona y
    // sus valores.
+   
+      constructor(nombre,apellido,edad,domicilio){
+         this.nombre =nombre;
+         this.apellido = apellido;
+         this.edad=edad;
+         this.domicilio=domicilio;
+
+      }
+
+      detalle = function(){
+         let m ={
+            nombre:this.nombre,
+            apellido:this.apellido,
+            edad:this.edad,
+            domicilio:this.domicilio
+         };
+         return m;
+
+      }
+
+   
 }
 
 function crearInstanciaPersona(nombre, apellido, edad, domicilio) {
@@ -13,6 +34,8 @@ function crearInstanciaPersona(nombre, apellido, edad, domicilio) {
    // Recibirás las propiedades por parámetro.
    // Retornar la instancia creada.
    // Tu código:
+   let instan = new Persona(nombre,apellido,edad,domicilio);
+   return instan;
 }
 
 function agregarMetodo() {
@@ -20,6 +43,11 @@ function agregarMetodo() {
    // Este método toma la propiedad "nombre" y "edad", y devuelve el string:
    // Ejemplo: "Juan, 22 años".
    // Tu código:
+   datos=function(){
+      return Persona.nombre + Persona.edad +" años";
+   }
+   return Persona.datos() ;
+   
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

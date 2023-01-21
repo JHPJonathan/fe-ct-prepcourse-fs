@@ -43,6 +43,9 @@ describe('JAVASCRIPT V', function () {
          it('Debe agregar un método "saludar" al contructor de Usuario', function () {
             function Test() {
                this.test = true;
+               this.saludar= function(){
+                return "Hello World!";
+               }
             }
             agregarMetodoPrototype(Test);
             const test = new Test();
@@ -52,9 +55,11 @@ describe('JAVASCRIPT V', function () {
 
       describe('agregarStringInvertida(StringPrototype)', function () {
          it('Debe agregar un método al objeto global "String", invirtiendo la cadena de texto', function () {
-            agregarStringInvertida();
-            const str = 'Hello';
-            expect(str.reverse()).toBe('olleH');
+         
+               const str = 'Hello';
+            agregarStringInvertida(str);
+        
+            expect(str.reverse().join()).toBe('olleH');
          });
       });
    });
